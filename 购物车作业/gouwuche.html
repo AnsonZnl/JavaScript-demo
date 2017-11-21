@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    tr{
+        border:1px solid black;
+        width: 100px;
+        height: 50px;
+    }
+    td{
+        border:1px solid black;
+        width: 200px;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    button{
+        font-size: 20px;
+        width: 25px;
+    }
+    </style>
+</head>
+<body>
+<table border="1px solid #000"  cellspacing="0">
+    <thead>
+    <tr>
+        <th>商品名称</th>
+        <th>单价</th>
+        <th>数量</th>
+        <th>小计</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>iphone6</td>
+        <td>&yen;2999</td>
+        <td>
+            <button onclick="calc(this)">+</button>
+            <span>1</span>
+            <button onclick="calc(this)">-</button>
+        </td>
+        <td>&yen;2999</td>
+    </tr>
+    <tr>
+        <td>iphone6</td>
+        <td>&yen;4999</td>
+        <td>
+            <button onclick="calc(this)">+</button>
+            <span>1</span>
+            <button onclick="calc(this)">-</button>
+        </td>
+        <td>&yen;4999</td>
+    </tr>
+    <tr>
+        <td>iphone6</td>
+        <td>&yen;6999</td>
+        <td>
+            <button onclick="calc(this)">+</button>
+            <span>1</span>
+            <button onclick="calc(this)">-</button>
+        </td>
+        <td>&yen;6999</td>
+    </tr>
+
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3">总计</td>
+        <td>&yen;14997</td>
+    </tr>
+    </tfoot>
+</table>
+<script>
+    function calc(btn){
+        var span=btn.parentElement.querySelector('span');
+        var n=span.innerHTML;
+        if(btn.innerHTML=='+'){
+            n++;
+        }else if(n>1){
+            n--;
+        }else{
+            n=1;
+        }
+        span.innerHTML=n;
+        var price=btn.parentElement.previousElementSibling.innerHTML.slice(1);
+        var subtotal=price*n;
+        btn.parentElement.nextElementSibling.innerHTML='&yen;'+subtotal.toFixed(2);
+
+        var tds=document.querySelectorAll('tbody>tr>td:last-child');
+        for(var i= 0,total=0;i<tds.length;i++){
+            total+=parseFloat(tds[i].innerHTML.slice(1));
+        }
+        document.querySelector('table>tfoot>tr>td:last-child').innerHTML='&yen;'+total.toFixed(2);
+    }
+
+</script>
+</body>
+</html>

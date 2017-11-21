@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<style>
+    table{
+
+    }
+    .jiacu{
+        font-weight: bold;
+    }
+    td{
+        text-align: center;
+        width: 120px;
+        mso-cellspacing: 0;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    #a_1,#a_2,#a_3{
+        text-decoration: none;
+        color: black;
+    }
+    .red{
+        background: red;
+    }
+</style>
+
+<body>
+<table border="2" cellpadding="0" cellspacing="0" onclick="zongji()">
+    <tr class="jiacu">
+        <td>商品名称</td>
+        <td>单价</td>
+        <td>数量</td>
+        <td>小计</td>
+    </tr>
+    <tr>
+        <td>iphone7</td>
+        <td>¥5999</td>
+        <td>
+            <input id="jia_1" onclick="jia_1()" type="button" value="+">
+            <a id="a_1" href="">1</a>
+            <input id="jian_1" onclick="jian_1()" type="button" value="-"></td>
+        <td class="red"><b>¥</b><span id="iph_1">5999</span></td>
+    </tr>
+    <tr>
+        <td>iphone7</td>
+        <td>¥5999</td>
+        <td>
+            <input id="jia_2" onclick="jia_2()" type="button" value="+">
+            <a id="a_2" href="">1</a>
+            <input id="jian_2" onclick="jian_2()" type="button" value="-"></td>
+        <td class="red"><b>¥</b><span id="iph_2">5999</span></td>
+    </tr>
+    <tr>
+        <td>iphone7</td>
+        <td>¥5999</td>
+        <td>
+            <input id="jia_3" onclick="jia_3()" type="button" value="+">
+            <a id="a_3" href="">1</a>
+            <input id="jian_3" onclick="jian_3()" type="button" value="-"></td>
+        <td class="red"><b>¥</b><span id="iph_3">5999</span></td>
+    </tr>
+    <tr>
+        <td colspan="3">总计</td>
+        <td><b>¥</b><span id="iph_4">17997</span></td>
+    </tr>
+</table>
+<script>
+//iphone7  1
+function jia_1(){
+    var jiafa= Number(document.getElementById('a_1').innerHTML);
+    var jiafa1=jiafa+1;
+    if (jiafa1<=9){
+        document.getElementById('a_1').innerHTML=jiafa1;
+    }else if(jiafa1=9){
+        document.getElementById('iph_1').innerHTML=53991;
+        alert('您的购买以达上限！')
+    }
+    var iph_1_1=document.getElementById('iph_1').innerHTML;//5999
+    var iph_1_2=5999*Number(jiafa1);//5999*n
+    if(iph_1_2>=5999){
+        document.getElementById('iph_1').innerHTML=iph_1_2;
+    }else {
+        document.getElementById('iph_1').innerHTML=5999;
+    }
+}
+function jian_1(){
+    var jianfa= Number(document.getElementById('a_1').innerHTML);
+    var jianfa1=jianfa-1;
+    if(jianfa1>=0){
+        document.getElementById('a_1').innerHTML=jianfa1;
+    }else {
+        alert('购买数量不可为负')
+    }
+    var iph_1_1=document.getElementById('iph_1').innerHTML;//5999*n
+//    console.log(typeof iph_1_1);
+    var iph_1_2=Number(iph_1_1)-5999;//5999*n
+    if(iph_1_2>=0){
+        document.getElementById('iph_1').innerHTML=iph_1_2;
+    }
+
+}
+
+//iphone7  2
+function jia_2(){
+    var jiafa= Number(document.getElementById('a_2').innerHTML);
+    var jiafa1=jiafa+1;
+    if (jiafa1<=9){
+        document.getElementById('a_2').innerHTML=jiafa1;
+    }else if(jiafa1=9){
+        document.getElementById('iph_2').innerHTML=53991;
+        alert('您的购买以达上限！')
+    }
+    var iph_1_1=document.getElementById('iph_1').innerHTML;//5999
+    var iph_1_2=5999*Number(jiafa1);//5999*n
+    if(iph_1_2>=5999){
+        document.getElementById('iph_2').innerHTML=iph_1_2;
+    }else {
+        document.getElementById('iph_2').innerHTML=5999;
+    }
+}
+function jian_2(){
+    var jianfa= Number(document.getElementById('a_2').innerHTML);
+    var jianfa1=jianfa-1;
+    if(jianfa1>=0){
+        document.getElementById('a_2').innerHTML=jianfa1;
+    }else {
+        alert('购买数量不可为负')
+    }
+    var iph_1_1=document.getElementById('iph_2').innerHTML;//5999*n
+//    console.log(typeof iph_1_1);
+    var iph_1_2=Number(iph_1_1)-5999;//5999*n
+    if(iph_1_2>=0){
+        document.getElementById('iph_2').innerHTML=iph_1_2;
+    }
+
+}
+
+//iphone7  3
+function jia_3(){
+    var jiafa= Number(document.getElementById('a_3').innerHTML);
+    var jiafa1=jiafa+1;
+    if (jiafa1<=9){
+        document.getElementById('a_3').innerHTML=jiafa1;
+    }else if(jiafa1=9){
+        document.getElementById('iph_3').innerHTML=53991;
+        alert('您的购买以达上限！')
+    }
+    var iph_1_1=document.getElementById('iph_3').innerHTML;//5999
+    var iph_1_2=5999*Number(jiafa1);//5999*n
+    if(iph_1_2>=5999){
+        document.getElementById('iph_3').innerHTML=iph_1_2;
+    }else {
+        document.getElementById('iph_3').innerHTML=5999;
+    }
+}
+function jian_3(){
+    var jianfa= Number(document.getElementById('a_3').innerHTML);
+    var jianfa1=jianfa-1;
+    if(jianfa1>=0){
+        document.getElementById('a_3').innerHTML=jianfa1;
+    }else {
+        alert('购买数量不可为负')
+    }
+    var iph_1_1=document.getElementById('iph_3').innerHTML;//5999*n
+//    console.log(typeof iph_1_1);
+    var iph_1_2=Number(iph_1_1)-5999;//5999*n
+    if(iph_1_2>=0){
+        document.getElementById('iph_3').innerHTML=iph_1_2;
+    }
+
+}
+
+//总计
+    function zongji(){
+        var iph_1=document.getElementById('iph_1').innerHTML;
+        var iph_2=document.getElementById('iph_2').innerHTML;
+        var iph_3=document.getElementById('iph_3').innerHTML;
+        var iph_4=Number(iph_1)+Number(iph_2)+Number(iph_3);
+        document.getElementById('iph_4').innerHTML=iph_4;
+    }
+
+</script>
+    <!-- JavaScript -->
+    <script src="js/main.min.js"></script>
+</body>
+
+</html>

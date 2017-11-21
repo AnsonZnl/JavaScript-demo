@@ -1,0 +1,223 @@
+/*home*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+p{
+    margin-bottom: 0;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+a:hover{
+    text-decoration: none;
+}
+header ,.main,.sjh_main{
+    background: #f0f0f0;
+}
+.header-div,.main-div{
+    width:95%;
+    margin: auto;
+    text-align: center;
+    background: #fff;
+    border:2px #cecece solid;
+}
+/*nav 样式*/
+.navbar-default {
+    background-color: #69d1e9;
+    border-color: transparent;
+}
+.navbar{
+    margin-bottom: 0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #ffffff;
+}
+.navbar-default .navbar-toggle{
+    background-color: #69d1e9;
+}
+.navbar-default .navbar-toggle:hover {
+    background-color: #69d1e9;
+}
+.navbar-default .navbar-toggle:focus{
+    background-color: #69d1e9;
+}
+.navbar-brand {
+    float: right;
+}
+.navbar-toggle {
+    float: left;
+    border-width:0;
+}
+.navbar-default .navbar-nav>.active>a{
+    background-color: #29bde0;
+}
+/*header 样式*/
+header{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+header .header-div{
+    border: solid 1px #ccc;
+    background: #fff;
+}
+header .header-div h1{
+    text-align: center;
+    color: #9a9a9a;
+}
+/*main 样式*/
+.main{
+    padding-bottom: 32px;
+}
+.main img{
+    width: 100%;
+}
+.main-div .main-tle{
+    border-bottom:solid 2px #fdd793;
+}
+.main-div .main-tle h2{
+    color: #eebc67;
+    text-align: center;
+}
+.main-div h3{
+    color: #fff;
+    line-height: 140px;
+}
+.main-div1,.main-div2,.main-div3{
+    margin: auto;
+}
+.main-box1,.main-box2,.main-box3{
+    display: block;
+    width:80%;
+    margin: auto;
+    background: #69d1e9;
+    text-align: center;
+}
+.main-div ul li{
+    list-style: none;
+    display: inline-block;
+}
+.main_li1{
+    width: 20px;
+    height: 20px;
+    background: #fdd793;
+    border-radius: 10px;
+}
+.main_li2{
+    width: 20px;
+    height: 20px;
+}
+/*左右小图片*/
+.main-div2{
+    position: relative;
+}
+.you,.zuo{
+    position: absolute;
+}
+.you{
+    left:20px;
+    top:30%;
+}
+.zuo{
+    right: 20px;
+    top:30%;
+}
+/*手机端样式  iPhone6 plus*/
+@media screen and (max-width:600px){
+    header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    header .header-div h1{
+        font-size: 18px;
+    }
+    .main-div .main-tle h2{
+        font-size: 20px;
+    }
+    .main-div h3 {
+        color: #fff;
+        line-height: 90px;
+        font-size: 20px;
+    }
+    .you{
+        width: 15px;
+        left: 11px;
+        top: 30%
+    }
+    .zuo{
+        width: 15px;
+        right: 11px;
+        top: 30%
+    }
+}
+/*sryx_jianban_home 样式*/
+header .header-div h1{
+    color: #000000;
+}
+.navbar-header img{
+    width: 15px;
+}
+.sjh_main_div1,.sjh_main_div2,.sjh_main_div3{
+    width:95%;
+    margin: auto;
+    background: #fff;
+    border:none;
+    padding-top: 20px;
+}
+.sjh_main_div1{
+    height: 200px;
+    text-align: center;
+}
+.row{
+    padding: 0;
+}
+.col-xs-6{
+    padding: 0;
+}
+.sjh_main_div2{
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sjh_main_div3{
+    height: 80px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.sjh_main_div3 span{
+    color:#fab442 ;
+}
+.sjh_main_div1 img{
+    width: 40px;
+    display: initial;
+}
+.sjh_main_div1 p{
+    display: block;
+}
+#qvfapai{
+    display: block;
+    width: 95%;
+    font-size: 16px;
+    line-height: 40px;
+    margin: auto;
+    background-color: #fab442;
+    color: #fff;
+    text-align: center;
+}
+#sjb_inp{
+    width: 20px;
+    color:#fab442 ;
+    border:none;
+    background-color: #f0f0f0
+}
+@media screen and (max-width:600px){
+    .navbar-toggle{
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome About</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-left"><img src="img/jsd.png" alt=""></div>
+    <div class="header-right"><img src="img/lineup.gif" alt=""></div>
+</header>
+<nav>
+    <div class="nav-main">
+        <ul class="ab-ul">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li><a href="live.html">Live</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="main">
+    <div class="main-main">
+        <h1>About the band</h1>
+        <ul id="js-ul">
+            <li><span class="huang">Jay Skript</span></li>
+            <li><span class="huang">The Domsters</span></li>
+        </ul>
+        <div id="div1">
+            <p>holle world!view photos of the band.find out ancout tour datesand get in touch with the band.</p>
+            <p>Welcome to the official website of Jay Skript and the Domsters.Hereyou can leam more about the band.view photos of the band.find out ancout tour datesand get in touch with the band.'
+            </p>
+        </div>
+    </div>
+</div>
+<!-- JavaScript -->
+<!--<script src="js/script.js"></script>-->
+<script>
+    //about.js
+    //点击下方出文字
+    var jsul=document.getElementById('js-ul').children;
+    var div1=document.getElementById('div1').children;
+    for (var i=0;i<jsul.length;i++){
+        jsul[i].index=i;
+        jsul[i].onclick=function(){
+            var num=parseInt(this.index);
+            for (var j=0;j<jsul.length;j++){
+                div1[j].style.display='none';
+            }
+                div1[num].style.display='block'
+        }
+    }
+</script>
+</body>
+</html>

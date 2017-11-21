@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript表单验证</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="logo">
+    <img src="img/logo.png" alt="">
+    <p style="text-align: center" class="txt">JavaScript表单验证</p>
+    <p class="txt">产品介绍：JavaScript实现表单验证！</p>
+</div>
+<div class="main">
+    <form action="">
+        <div class="uname">
+            <label>用户名：</label>
+            <input type="text" placeholder="请再此输入用户名">
+            <p></p>
+        </div>
+        <div class="pwd">
+            <label>密码：</label>
+            <input type="password" placeholder="请在此输入密码">
+            <p></p>
+        </div>
+        <div class="repwd">
+            <label>确认密码：</label>
+            <input type="password" placeholder="请再次输入密码">
+            <p></p>
+        </div>
+        <div class="uemil">
+            <label>电子邮箱：</label>
+            <input type="text" placeholder="请输入您的电子邮箱">
+            <p></p>
+        </div>
+        <div class="phone">
+            <label>联系电话：</label>
+            <input type="text" placeholder="请输入手机号" maxlength="11">
+            <p></p>
+        </div>
+        <div class="test">
+            <label>验证码：</label>
+            <input type="text" class="wty" placeholder="请输入验证码">
+            <button class="gets">获取验证码</button>
+            <p></p>
+        </div>
+<!--协议-->
+            <div class="check">
+                <input id="chk" type="checkbox" checked="checked">
+                <span>同意</span>
+                <a href="#">《盛邦升华协议》</a>
+                <p></p>
+            </div>
+        <div class="btn">
+            <input type="button" value="注册" id="tijiao">
+            <input type="button" value="重置" id="chongzhi">
+        </div>
+    </form>
+</div>
+<script src="js/new.js"></script>
+</body>
+</html>

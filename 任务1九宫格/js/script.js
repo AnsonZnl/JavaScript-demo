@@ -6,7 +6,7 @@ var finish=document.querySelector('.finish');
 var li=document.querySelectorAll('li');
 var time;
 start.onclick=function(){//开始
-    cleartInterval(time);//点击后停止一下定时器,防止多次点击加速
+    clearInterval(time);//在开始前停止一下定时器,防止多次点击加速bug
     time=setInterval(function(){//开始定时器
         for(var l=0;l<li.length;l++){//开始前默认颜色
             li[l].style.backgroundColor='';

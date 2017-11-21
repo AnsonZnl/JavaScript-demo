@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome Home</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- CSS -->
+    <!--<link rel="stylesheet" href="css/main.min.css">-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<header>
+    <div class="header-left"><img src="img/jsd.png" alt=""></div>
+    <div class="header-right"><img src="img/guitarist.gif" alt=""></div>
+</header>
+<nav>
+    <div class="nav-main">
+        <ul>
+            <li><a href="" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li><a href="live.html">Live</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="main">
+    <div class="main-main">
+        <h1>Welcome</h1>
+        <p class="in-p">Welcome to the official website of Jay Skript and the Domsters.Hereyou can <span class="huang">leam more about
+        the band</span>.view <span class="huang">photos of the band</span>.find out ancout
+            <span class="huang">tour dates</span>and <span class="huang">get in touch with the band</span>.</p>
+        <div class="banner">
+            <ul id="dgImg">
+                <li><a href="#" class="ho-img"><img src="img/lineup.gif" alt=""></a></li>
+                <li><a href="#" class="ho-img"><img src="img/guitarist.gif" alt=""></a></li>
+                <li><a href="#" class="ho-img"><img src="img/drummer.gif" alt=""></a></li>
+                <li><a href="#" class="ho-img"><img src="img/bassist.gif" alt=""></a></li>
+                <li><a href="#" class="ho-img"><img src="img/basshead.gif" alt=""></a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- JavaScript -->
+<!--<script src="js/script.js"></script>-->
+<script>
+    //home.js
+    //轮播图
+    var p=0;
+    function change(){
+        var ul=document.getElementById('dgImg');
+        p++;
+        p=p==4?0:p;
+        ul.style.marginLeft=p*-167+"px"
+    }
+    setInterval(change,2500)
+
+</script>
+</body>
+
+</html>

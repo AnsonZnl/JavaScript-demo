@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript自动选项卡</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #585868;
+        }
+        .main {
+            position: relative;
+            width: 520px;
+            height: 314px;
+            margin: auto;
+            margin-top: 200px;
+        }
+        #main_ul::after {
+            display: block;
+            clear: both;
+            content: '';
+        }
+
+        #main_ul {
+            background: #303448;
+        }
+
+        #main_ul li {
+            padding: 20px 30px;
+            display: block;
+            float: left;
+            list-style: none;
+            color: #999aa5;
+            font-size: 14px;
+        }
+
+        #box {
+            width: 520px;
+            height: 261px;
+            padding-top: 20px;
+            padding-left: 20px;
+            background: #f8fcf8;
+        }
+        #box1 li {
+            float: left;
+            list-style: none;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <ul id="main_ul">
+        <li style="background:#c04438;color: #fff;">新闻</li>
+        <li>综艺</li>
+        <li>娱乐</li>
+        <li>购物</li>
+    </ul>
+    <div id="box">
+        <p style="display: block;">还在打王者LOL呢？国家大事你关心那了么？</p>
+        <p style="display: none;">娱乐圈的那点破事你潜规则？</p>
+        <p style="display: none;">元芳薛之谦事件你怎么看？</p>
+        <p style="display: none;">淘宝双十一你们是不是又要剁手了？</p>
+    </div>
+</div>
+<script>
+        var li= document.querySelectorAll('li');//找到所有的 li
+        var p= document.querySelectorAll('#box>p');//找到div下所有的 p
+        var timr;//声明一个定时器
+        var num=0;//初始化一个变量
+        function change(){
+            timr=setInterval(
+                    function(){
+                       num++;//变量自加
+                        if (num>=li.length){//num 只能小于等于li.length  否则就=0
+                            num=0;
+                        }
+                        for (var i=0;i<li.length;i++){//便利li 得到 0123
+                            //改变所有p和li的的属性
+                            li[i].style.background='#303448';
+                            li[i].style.color='#999aa5';
+                            p[i].style.display='none';
+                        }
+                        //单独改变哪一个正在自增的元素属性
+                        li[num].style.background='#c04438';
+                        li[num].style.color='#fff';
+                        p[num].style.display='block';
+                    }
+            ,1000)
+        }
+    change();//调用change()
+</script>
+</body>
+</html>

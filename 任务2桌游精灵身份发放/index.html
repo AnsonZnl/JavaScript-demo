@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>杀人游戏</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">杀人游戏</a></li>
+                    <li><a href="#">捉鬼游戏</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+<header>
+    <div class="header-div">
+        <h1>请点击按钮开始游戏</h1>
+    </div>
+</header>
+    <div class="main">
+        <div class="main-div">
+            <div class="main-tle">
+                <h2>杀人游戏</h2>
+            </div>
+            <div class="main-div1">
+                <a href="sryx_jianban_home.html" class="main-box1"><h3>简化版</h3></a>
+                <p>有1314个用户正在玩此款游戏</p>
+            </div>
+            <div class="main-div2">
+                <a class="you"><img src="img/you.png" alt=""></a>
+                <a class="zuo"><img src="img/zuo.png" alt=""></a>
+                <a href="#" class="main-box2"><h3>警版</h3></a>
+                <p>有1314个用户正在玩此款游戏</p>
+            </div>
+            <div class="main-div3">
+                <a href="#" class="main-box3"><h3>3.0版</h3></a>
+                <p>有1314个用户正在玩此款游戏</p>
+            </div>
+            <ul id="main_ul">
+                <li class="main_li1">1</li>
+                <li class="main_li2">2</li>
+            </ul>
+        </div>
+    </div>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--<script src="js/script.js"></script>-->
+    <script>
+        //    home js
+        var main_h2=document.querySelector('.main-tle>h2');
+        var main_div1_h3=document.querySelector('.main-div1>a>h3');
+        var main_div1_p=document.querySelector('.main-div1>p');
+        var main_div2_h3=document.querySelector('.main-div2>a>h3');
+        var main_div2_p=document.querySelector('.main-div2>p');
+        var main_div3_h3=document.querySelector('.main-div3>a>h3');
+        var main_div3_p=document.querySelector('.main-div3>p');
+        var you=document.querySelector('.you');
+        var zuo=document.querySelector('.zuo');
+        var main_ul=document.getElementById('main_ul');
+        function qiehuan(){
+            if(main_h2.innerHTML=='捉鬼游戏'){
+                main_h2.innerHTML='杀人游戏';
+                main_div1_h3.innerHTML='简化版';
+                main_div2_h3.innerHTML='警版';
+                main_div3_h3.innerHTML='3.0版';
+                main_div1_p.innerHTML='有1314个用户正在玩此款游戏';
+                main_div2_p.innerHTML='有1314个用户正在玩此款游戏';
+                main_div3_p.innerHTML='有1314个用户正在玩此款游戏';
+                main_ul.firstElementChild.className='main_li1';
+                main_ul.lastElementChild.className='main_li2';
+            }else{
+                main_h2.innerHTML='捉鬼游戏';
+                main_div1_h3.innerHTML='简化版';
+                main_div2_h3.innerHTML='猜词版';
+                main_div3_h3.innerHTML='白痴版';
+                main_div1_p.innerHTML='有521个用户正在玩此款游戏';
+                main_div2_p.innerHTML='有521个用户正在玩此款游戏';
+                main_div3_p.innerHTML='有521个用户正在玩此款游戏';
+                main_ul.firstElementChild.className='main_li2';
+                main_ul.lastElementChild.className='main_li1';
+            }
+        };
+        you.onclick=function(){
+            qiehuan()
+        };
+        zuo.onclick=function(){
+            qiehuan()
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Photos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <div class="header-left"><img src="img/jsd.png" alt=""></div>
+    <div class="header-right"><img src="img/basshead.gif" alt=""></div>
+</header>
+<nav>
+    <div class="nav-main">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="" class="active">Photos</a></li>
+            <li><a href="live.html">Live</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="main">
+    <div class="main-main">
+        <h1>Photos of the band</h1>
+        <ul class="ph-ul">
+            <li><img src="img/2_03.gif" alt=""></li>
+            <li><img src="img/3_03.gif" alt=""></li>
+            <li><img src="img/4_03.gif" alt=""></li>
+            <li><img src="img/5_03.gif" alt=""></li>
+        </ul>
+        <p>Choose an image</p>
+        <div class="ph-div">
+            <img id="ph-dimg" src="img/ph.gif" alt="">
+        </div>
+    </div>
+</div>
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+<script>
+    //photos.js
+    //点击换大图
+    var phdimg=document.getElementById('ph-dimg');
+    var phLiImg=document.querySelectorAll('li');
+    for(var i=0;i<phLiImg.length;i++){
+        phLiImg[i].onclick=function(){
+            imgsrc=this.firstChild.src;
+            phdimg.src=imgsrc;
+        }
+    }
+</script>
+</body>
+</html>

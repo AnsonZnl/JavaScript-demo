@@ -1,0 +1,25 @@
+{
+  "name": "fay",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "",
+    "gulp-sass": "",
+    "gulp-minify-css": "",
+    "gulp-uglify": "",
+    "gulp-rename": "",
+    "merge-stream": "",
+    "gulp-htmlmin": "",
+    "browser-sync": "",
+    "gulp-plumber": "",
+    "gulp-load-plugins": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

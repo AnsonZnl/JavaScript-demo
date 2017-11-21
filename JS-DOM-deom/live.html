@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Live</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    </script>
+</head>
+
+<body>
+<header>
+    <div class="header-left"><img src="img/jsd.png" alt=""></div>
+    <div class="header-right"><img src="img/bassist.gif" alt=""></div>
+</header>
+<nav>
+    <div class="nav-main">
+        <ul class="ab-ul">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li><a href="" class="active">Live</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="main">
+    <div class="main-main">
+     <h1>Tour dates</h1>
+        <table border="2" cellpadding="0" cellspacing="0">
+            <tbody id="live-tbody">
+            <tr>
+                <td>Date </td>
+                <td>City</td>
+                <td>Venue</td>
+            </tr>
+            <tr class="tr1">
+                <td>June 9th</td>
+                <td>Portland,OR</td>
+                <td>Crystal Ballroom</td>
+            </tr>
+            <tr class="tr2">
+                <td>June 10th</td>
+                <td>Seattle,WA</td>
+                <td>Crocodile Cafe</td>
+            </tr>
+            <tr class="tr1">
+                <td>June 12th</td>
+                <td>Sacramento,CA</td>
+                <td>Torch Club</td>
+            </tr>
+            <tr class="tr2">
+                <td>June 17th</td>
+                <td>Austin,TX</td>
+                <td>Speakeasy</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2>Abbreviations</h2>
+        <ul class="li-ul">
+            <li><span>OR</span><span>Oregon</span></li>
+            <li><span>WA</span><span>Washington</span></li>
+            <li><span>CA</span><span>California</span></li>
+            <li><span>TX</span><span>Texas</span></li>
+        </ul>
+    </div>
+</div>
+<!-- JavaScript -->
+<!--<script src="js/script.js"></script>-->
+<script>
+    //live.js
+    //滑动tr tr换背景颜色
+    var tbody=document.getElementById('live-tbody');
+    var tr=tbody.children;
+    for (var i=0;i<tr.length;i++){
+            tr[i].onmouseout=function(){
+                this.style.background=''
+            };
+            tr[i].onmouseover=function(){
+                this.style.background='#f19700';
+        };
+    }
+</script>
+</body>
+</html>

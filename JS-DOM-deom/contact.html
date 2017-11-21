@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<header>
+    <div class="header-left"><img src="img/jsd.png" alt=""></div>
+    <div class="header-right"><img src="img/drummer.gif" alt=""></div>
+</header>
+<nav>
+    <div class="nav-main">
+        <ul class="ab-ul">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li><a href="live.html">Live</a></li>
+            <li><a href="" class="active">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="main">
+    <div class="main-main">
+       <h1>Contact the band</h1>
+        <form action="1">
+            <p>Name:</p>
+            <p><input value="" id="uname" type="text" placeholder="Your name"></p>
+            <p></p>
+            <p>Email:</p>
+            <p><input value="" id="uemail" type="text" placeholder="Your email address"></p>
+            <p></p>
+            <p>Message:</p>
+            <p><textarea id="umes" name="comments" cols="40" rows="4" wrap="VIRTUAL" placeholder="Write your message here."></textarea></p>
+            <p><input id="send" type="button" value="Send" align="MIDDLE"> </p>
+        </form>
+    </div>
+</div>
+<!-- JavaScript -->
+<!--<script src="js/script.js"></script>-->
+<script>
+    //contact.js
+    //表单验证
+    var unamereg=/^[\u4E00-\u9FA5]{2,5}(?:·[\u4E00-\u9FA5]{2,5})*$/;
+    var uemailreg=/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/;
+    var umesreg=/^\w+$/;
+    var uname=document.getElementById('uname');
+    var uemail=document.getElementById('uemail');
+    var umes=document.getElementById('umes');
+    var send=document.getElementById('send');
+    send.onclick=function(){
+        if(unamereg.test(uname.value)==true&&uemailreg.test(uemail.value)==true&&umesreg.test(umes.value)){
+            alert('提交成功')
+        }else {
+            alert('提交有误')
+        }
+    };
+
+</script>
+</body>
+</html>

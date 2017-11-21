@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杀人游戏-简化版</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a>
+            <a href="index.html" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <img src="img/fanhui-home.png" alt="">
+            </a>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+<header>
+    <div class="header-div">
+        <h1>玩家匹配</h1>
+    </div>
+</header>
+<div class="sjh_main">
+	<div class="sjh_main_div1">
+		<div class="row">
+		<div class="sjh_main_div1_shashou col-xs-6">
+			<img src="img/shashou_icn.png" alt="" />
+			<p>杀手<sapn id='sjh_ss_rs'>2</sapn>人</p>
+		</div>
+		<div class="sjh_main_div1_pingmin col-xs-6">
+			<img src="img/pingmin.png" alt="" />
+			<p>平民<sapn id='sjh_pm_rs'>6</sapn>人</p>
+		</div>
+		</div>
+	</div>
+	<div class="sjh_main_div2">
+
+	</div>
+	<div class="sjh_main_div3">
+		<p>请输入玩家数量 <input id="sjb_inp" type="text" value="8"  maxlength="2"/><span>玩家数量为4-18</span></p>
+	</div>
+	<a href="#" id="qvfapai">去发牌</a>
+</div>
+
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--<script src="js/script.js"></script>-->
+<script>
+    ///*sryx_jianban_home  js
+    var sjbInp=document.getElementById('sjb_inp');
+    var qvfapai=document.getElementById('qvfapai');
+    function  sjbInpfun(){
+        var sjh_ss_rs=document.getElementById('sjh_ss_rs');
+        var sjh_pm_rs=document.getElementById('sjh_pm_rs');
+        if(4>sjbInp.value){
+            sjh_ss_rs.innerHTML='';
+            sjh_pm_rs.innerHTML='';
+        }else if(6>=sjbInp.value){
+            sjh_ss_rs.innerHTML='1';
+            pm1=(sjbInp.value)-1;
+            sjh_pm_rs.innerHTML=pm1;
+        }else if(8>=sjbInp.value){
+            sjh_ss_rs.innerHTML='2';
+            pm2=(sjbInp.value)-2;
+            sjh_pm_rs.innerHTML=pm2;
+        }else if(10>=sjbInp.value){
+            sjh_ss_rs.innerHTML='3';
+            pm2=(sjbInp.value)-3;
+            sjh_pm_rs.innerHTML=pm2;
+        }else if(12>=sjbInp.value){
+            sjh_ss_rs.innerHTML='4';
+            pm2=(sjbInp.value)-4;
+            sjh_pm_rs.innerHTML=pm2;
+        }else if(15>=sjbInp.value){
+            sjh_ss_rs.innerHTML='5';
+            pm2=(sjbInp.value)-5;
+            sjh_pm_rs.innerHTML=pm2;
+        }else if(18>=sjbInp.value){
+            sjh_ss_rs.innerHTML='6';
+            pm2=(sjbInp.value)-6;
+            sjh_pm_rs.innerHTML=pm2;
+        }else{
+            sjh_ss_rs.innerHTML='';
+            sjh_pm_rs.innerHTML='';
+            alert('请输入正确的玩家数量');
+        }
+    };
+    sjbInp.onkeyup=function(){
+        sjbInpfun();
+    };
+    qvfapai.onclick=function(){
+        qvFaPai()
+    };
+    function qvFaPai(){
+        var reg= /^([4-9]|1[0-8])$/;
+        if(reg.test(sjbInp.value)){
+            alert('点击开始');
+        }else{
+            alert('请输入正确的玩家数量');
+        }
+    };
+
+</script>
+</body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" placeholder="请输入您的手机号">
+<button>ok</button>
+<script>
+var inp=document.querySelector('input');
+var btn=document.querySelector('button');
+btn.onclick=function(){
+    var Phone=(Number(inp.value));
+    var reg=/^(\+86|\0086)?\s*1[3578]\d{9}$/;
+    var fr=reg.test(Phone);
+    if(fr==true){
+        alert('手机号输入正确')
+    }else {
+        alert('手机号输入错误')
+    }
+};
+
+
+
+
+//    var reg=/^1[3,5,7,8]\d{9}$/;
+//    var str='18800110342';
+//    console.log(reg.test(str));
+</script>
+
+</body>
+</html>

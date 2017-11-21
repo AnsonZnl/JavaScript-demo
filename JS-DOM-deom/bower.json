@@ -1,0 +1,24 @@
+{
+  "name": "sbsh",
+  "authors": [
+    "playfay <playfay@qq.com>"
+  ],
+  "description": "sbsh description",
+  "main": [
+    "index.html",
+    "sass/scss.scss",
+    "gulpfile.js"
+  ],
+  "keywords": [
+    "sbsh"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/playfay/g",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
