@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zn-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>历史上的今天 API调用</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        #app,#list {
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border: 1px #000 solid;
+        }
+
+        .head {
+            text-align: center;
+        }
+        #img {
+            width: 250px;
+        }
+        #list{
+            text-align: center;
+        }
+        #list img{
+            width: 250px;
+            height: 200px;
+        }
+        #span{
+            color: red;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <h2>历史上的今天</h2>
+        <button onclick="Jdeta()">点击查看历史上的今天</button>    
+        <h2>我要查询</h2>
+        请输入您要查询的年月日：<br>
+        <input id="deta" type="number" maxlength="4" placeholder="0101">
+        <button onclick="ondeta()">查询</button>
+        <br><span id="span"></span>
+        <br> 注：请输入 *月-日* 如“0201”的格式
+        
+        <br>
+    </div>
+
+    <div id="app">
+        <strong id="year"></strong>年
+        <strong id="month"></strong>月
+        <strong id="day"></strong>日
+        <br>
+        <br>
+        <strong>标题:</strong>
+        <p id="title"></p>
+        <strong>图片：</strong>
+        <p>
+            <img id="img" src="" alt="">
+        </p>
+    </div>
+
+    <hr>
+
+    <p style="text-align: center;">历史上的今天------所有</p>
+    <ul id="list">
+    </ul>
+    <script>
+        var deta=document.getElementById("deta");
+        var span=document.getElementById("span");
+        var detaNum=deta.value;
+        deta.onkeydown =function(){
+            var num=detaNum.length;
+            console.log(num)
+            console.log(detaNum)
+            if(num){
+                span.innerHTML=" 注：请输入 *月--日*的格式 如“0201”的格式";
+            }else{
+                span.innerHTML=" 注：数字不能超过4位";
+            }
+        }
+    </script>
+    <script>
+        //以下代码仅为演示用,具体传入参数请参看接口描述详情页.
+        //需要引用jquery库
+        function formatterDateTime() {
+            var date = new Date()
+            var month = date.getMonth() + 1
+            var datetime = date.getFullYear()
+                + ""// "年"
+                + (month >= 10 ? month : "0" + month)
+                + ""// "月"
+                + (date.getDate() < 10 ? "0" + date.getDate() : date
+                    .getDate())
+                + ""
+                + (date.getHours() < 10 ? "0" + date.getHours() : date
+                    .getHours())
+                + ""
+                + (date.getMinutes() < 10 ? "0" + date.getMinutes() : date
+                    .getMinutes())
+                + ""
+                + (date.getSeconds() < 10 ? "0" + date.getSeconds() : date
+                    .getSeconds());
+            return datetime;
+        }
+        function ondeta() {
+            var deta = document.getElementById("deta");
+            var dataNum = deta.value;
+            //alert(typeof dataNum)
+            $.ajax({
+                type: 'post',
+                url: 'http://route.showapi.com/119-42',
+                dataType: 'json',
+                data: {
+                    "showapi_timestamp": formatterDateTime(),
+                    "showapi_appid": '61967', //这里需要改成自己的appid
+                    "showapi_sign": 'efc7d95dafb14c9dabf3867072d12b28',  //这里需要改成自己的应用的密钥secret
+                    "date": dataNum
+                },
+                error: function (XmlHttpRequest, textStatus, errorThrown) {
+                    alert("操作失败!");
+                },
+                success: function (result) {
+                    console.log(result) //console变量在ie低版本下不能用
+                    //alert(result.showapi_res_code + "调用成功")
+                    var title = document.getElementById("title");
+                    title.innerHTML = result.showapi_res_body.list[0].title;
+                    var img = document.getElementById("img");
+                    img.src = result.showapi_res_body.list[0].img;
+                    var day = document.getElementById("day");
+                    day.innerHTML = result.showapi_res_body.list[0].day;
+                    var month = document.getElementById("month");
+                    month.innerHTML = result.showapi_res_body.list[0].month;
+                    var year = document.getElementById("year");
+                    year.innerHTML = result.showapi_res_body.list[0].year;
+                    var json = eval(result.showapi_res_body.list); //数组     
+                    var result = "";
+                    $.each(json, function (index) {
+                        //循环获取数据    
+                        var title = json[index].title;
+                        var year = json[index].year;
+                        var month = json[index].month;
+                        var day = json[index].day;
+                        var img = json[index].img
+                        result += "标题："+title +"<br/>时间："+ year + "年-" + month + "月-" + day + "日<br/><img src="+img+" alt/>"+"<br><br>";
+                    });
+                    $("#list").html('');
+                    $("#list").html(result);
+                }
+            });
+
+        }
+        //历史上的今天
+        function Jdeta() {
+            //alert(typeof dataNum)
+            $.ajax({
+                type: 'post',
+                url: 'http://route.showapi.com/119-42',
+                dataType: 'json',
+                data: {
+                    "showapi_timestamp": formatterDateTime(),
+                    "showapi_appid": '61967', //这里需要改成自己的appid
+                    "showapi_sign": 'efc7d95dafb14c9dabf3867072d12b28',  //这里需要改成自己的应用的密钥secret
+                    "date": ""
+                },
+                error: function (XmlHttpRequest, textStatus, errorThrown) {
+                    alert("操作失败!");
+                },
+                success: function (result) {
+                    console.log(result) //console变量在ie低版本下不能用
+                    //alert(result.showapi_res_code + "调用成功")
+                    var title = document.getElementById("title");
+                    title.innerHTML = result.showapi_res_body.list[0].title;
+                    var img = document.getElementById("img");
+                    img.src = result.showapi_res_body.list[0].img;
+                    var day = document.getElementById("day");
+                    day.innerHTML = result.showapi_res_body.list[0].day;
+                    var month = document.getElementById("month");
+                    month.innerHTML = result.showapi_res_body.list[0].month;
+                    var year = document.getElementById("year");
+                    year.innerHTML = result.showapi_res_body.list[0].year;
+                    var json = eval(result.showapi_res_body.list); //数组     
+                    var result = "";
+                    $.each(json, function (index) {
+                        //循环获取数据    
+                        var title = json[index].title;
+                        var year = json[index].year;
+                        var month = json[index].month;
+                        var day = json[index].day;
+                        var img = json[index].img
+                        result += "标题："+title +"<br/>时间："+ year + "年-" + month + "月-" + day + "日<br/><img src="+img+" alt/>"+"<br><br>";
+                    });
+                    $("#list").html('');
+                    $("#list").html(result);
+                }
+            });
+
+        }
+    </script>
+</body>
+
+</html>
