@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+</head>
+<img class="img" src="" alt="">
+<div class="description">
+</div>
+<br>
+    <a href="https://blog.csdn.net/sinat_27938829/article/details/79336707">https://blog.csdn.net/sinat_27938829/article/details/79336707</a>
+<body>
+    <script>
+
+        $.ajax({
+            type: "POST",
+            url: 'https://api.hibai.cn/api/index/index',
+            dataType: 'json',
+            data: { "TransCode": "030111", "OpenId": "123456789", "Body": "" },
+            success: function (result) {
+                $(".description").text(result.Body.word + '   ———— 「ONE · 一个」');
+                $(".img").attr('src',result.Body.img_url); 
+                console.log(result.Body.img_url)
+                //return false;
+                console.log(result);
+            }
+            // error: function (XmlHttpRequest, textStatus, errorThrown) {
+            //     alert("操作失败!");
+            // },
+            // success: function (result) {
+            //     $.each(json, function (index) {
+            //         //循环获取数据    
+            //         var title = json[index].title;
+            //         var year = json[index].year;
+            //         var month = json[index].month;
+            //         var day = json[index].day;
+            //         var img = json[index].img
+            //         result += "标题：" + title + "<br/>时间：" + year + "年-" + month + "月-" + day + "日<br/><img src=" + img + " alt/>" + "<br><br>";
+            //     });
+            //     $("#list").html('');
+            //     $("#list").html(result);
+            // }
+        });
+    </script>
+</body>
+
+</html>
