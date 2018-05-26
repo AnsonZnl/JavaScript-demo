@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8" > 
+
+	<title>Todo list</title>
+	<link rel="stylesheet" href="1.css">
+</head>
+<body class="bg">
+	
+		<div class="w heard">
+			<h1>Todo List </h1>
+		</div>
+		<div class="w write">
+		<form action="javascript:postaction()" id="form">
+		<input  type="text" id="title" name="title" required="required" placeholder="what need to be done ? " autocomplete="off" />
+	    </form>
+		</div>		
+       <div class="w view" id="list" >
+		<div class="jilu" id="todo" >
+			<ul id="dolist">
+			</ul>
+	</div>
+
+		<div class="list" style="display:block">
+		<span class="todocount"><strong id="docount"></strong> item left</span>
+			<ul class="select">
+				<li ><a href="#" id="all">All</a></li>
+				<li ><a href="#" id="active">Active</a></li>
+				<li ><a href="#" id="completed">Completed</a></li>				
+			</ul>
+<a href="javascript:clearcomplet();"><button class="clearcomplet" style="display:block" id="clear"  >clear completed</button></a>
+		</div>
+
+      </div>
+<script type="text/javascript" src="1.js"></script>
+</body>
+</html>

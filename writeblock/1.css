@@ -1,0 +1,40 @@
+h2{
+    text-align: center;
+}
+#main{
+    width: 400px;
+    height: 400px;
+    border: 2px solid #000;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#con{
+    position: relative;
+     top:-100px; /* 隐藏最上面一行 */
+    height: 400px;
+    border-collapse: collapse;
+
+}
+.row{
+    height: 100px;
+    
+}
+.cell{
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+.black{
+    background: #000;
+}
+.btn{
+   height: 25px;
+   margin-top: 10px;
+   text-align: center;
+}
+button{
+    color: #fff;
+    background: #000;
+    border: 2px solid #000;
+    border-radius: 10px;
+}

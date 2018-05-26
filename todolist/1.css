@@ -1,0 +1,235 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button ,a{ border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; }
+select, input { vertical-align:middle;}
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; } /*防止拖动*/
+table { border-collapse:collapse; }
+.w {  
+    margin: 0 auto;
+       }
+
+.bg{
+		background: #f5f5f5;
+	}
+
+.heard{
+        position:absolute; 
+        width: 100%;
+        font-size: 60px;
+        font-weight: 100;
+        text-align: center;
+        color: #c0c0c0;
+	}
+.heard h1{
+
+		display: block;
+		color: rgba(175, 47, 47, 0.29);
+	}
+
+.write{ position: relative;
+	    top: 150px;
+		width: 800px;
+		height: 100px;
+        border: none;  
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+
+
+}
+.write input{
+	font-size: 40px;
+	padding: 0px 0px 0px 40px;
+	width: 760px;
+	height: 100px;
+    background: rgba(6, 6, 6, 0);
+	box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
+	
+	
+}
+.view{
+        position: relative;
+        width: 800px;
+        top: 150px;
+        border: none;  
+        background: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+        
+
+} 
+
+
+ .jilu{  position: relative;
+		width: 800px;
+        border: none;  
+        background: #fff;
+        border-top: 1px solid #c4c4c4;
+        border-bottom: 1px solid #c4c4c4;  
+
+} 
+
+
+.jilu li{ 
+         position: relative;
+         font-size: 24px;
+         border-bottom: 1px solid #ededed;height:100px;
+         background: #fff;
+
+}
+.jilu li input{
+    text-align: center;
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 32px;
+    margin: auto 0;
+    border: none; 
+    -webkit-appearance: none; /* 可以移除原生样式 */
+}
+
+.jilu li input:after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="6"/></svg>');
+}
+
+.jilu li input:checked:after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
+
+.jilu li p {
+    white-space: pre-line;
+    word-break: break-all;
+    padding: 20px 80px 24px 30px;
+    margin-left: 45px;
+    display: block;
+    line-height: 1.2;
+    transition: color 0.4s;
+    font-size: 40px;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 1.4em;
+}
+
+.jilu li.completed p{
+    color: #d9d9d9;
+    text-decoration: line-through;
+}
+
+
+.jilu li a{
+    position:absolute;
+    top:30px;
+    right:34px;
+    width:31px;
+    height:31px;
+    text-decoration: none;
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('font/iconfont.woff') format('woff'),
+  url('font/iconfont.ttf') format('truetype'),
+  url('font/iconfont.svg#iconfont') format('svg');
+}
+.jilu .iconfont{
+  font-family:"iconfont" !important;
+  font-size:30px;
+  font-style:normal;
+  color:#f10215;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  display: none;
+}
+.jilu li:hover .iconfont {
+    display: block;
+}
+
+
+.list{  position: relative;
+        color: #777;
+        width: 740px;
+        height: 50px;
+        padding: 14px 30px;
+        height: 20px;
+        text-align: center;
+        background: #fff;
+        
+        
+}
+.list:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+.todocount{
+	float: left;
+    text-align: left;
+   
+}
+.todocount strong{
+    font-weight: 400;
+}
+.select{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+.list .select li{
+	    display: inline;        
+}
+
+button{
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    color: #777;
+}
+.clearcomplet{
+    float: right;
+    line-height: 20px;
+    cursor: pointer;
+    position: relative;
+    
+} 
+button:hover {
+    text-decoration: underline;
+}  
+.list li {
+    display: inline;
+}
+
+.list li a{
+    color: inherit;
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+.list li a.selected,
+.list li a:hover {
+    border-color: rgba(232, 27, 27, 0.35);
+}
+
+.list li a.selected {
+    border-color: rgba(232, 27, 27, 0.5);
+}
+
+footer{color:#666;font-size:14px;text-align:center;}
+footer a{color:#666;text-decoration:none;color:#999;}

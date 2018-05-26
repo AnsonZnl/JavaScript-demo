@@ -1,0 +1,8 @@
+html,body,image,ul,il{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+ul,ol{
+    list-style: none;
+}
